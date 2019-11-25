@@ -12,6 +12,6 @@ Widget에 Stream값을 적용하는 부분을 테스트하기위한 프로젝트
 
 구현 방법별로 나눈 폴더에 대한 링크
 
-* [Stateful](https://github.com/flutterstudygn/archive/tree/master/stream_test/lib/with_stateful)
-* [StreamBuilder](https://github.com/flutterstudygn/archive/tree/master/stream_test/lib/with_stream_builder)
-* [Provider](https://github.com/flutterstudygn/archive/tree/master/stream_test/lib/with_provider)
+* [Stateful](https://github.com/flutterstudygn/stream_widget_example/tree/master/lib/with_stateful)
+* [StreamBuilder](https://github.com/flutterstudygn/stream_widget_example/tree/master/lib/with_stream_builder)
+* [Provider](https://github.com/flutterstudygn/stream_widget_example/tree/master/lib/with_provider)
