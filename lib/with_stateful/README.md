@@ -2,6 +2,8 @@
 
 StatefulWidget을 사용하여 setState()함수로 Widget을 갱신한다.
 
+
+
 ## Widget 갱신.
 
 StatefulWidget은 해당 Widget의 상태를 나타내는 state를 가지고있다. state의 lifetime은 initState()에서 dispose()사이이며 이를 갱신하기 위해선 setState()라는 함수를 불러주면 된다. 이를 위해 Stream을 listen하여 Stream을 통해 값이 들어올 때마다 해당 값을 가지고 Widget을 갱신한다. 이는 Stream.listen을 통해 반환되는 StreamSubscription의 onData()메소드에 정의해주면 된다.
@@ -13,6 +15,8 @@ StreamSubscription subscription = someStream.listen(
   }),
 );
 ```
+
+
 
 ## Subscription 관리.
 
@@ -45,6 +49,8 @@ subscription.pause(
 );
 ```
 
+
+
 ## 특이사항.
 
 ### 1. Back button에 의한 Navigator.pop()의 처리.
@@ -64,6 +70,7 @@ return WillPopScope(
 ```
 
 ### 2. Navigator.push()가 받아온 데이터를 가지고 바로 Widget 갱신.
+
 pop된 Widget에서 전해준 데이터를 드러난 Widget의 state에 적용시키려면? 간단하다 Navigator.push()의 반환값인 Future의 값을 받아서 setState()함수를 통해 적용하면 된다.
 
 ```dart
@@ -77,3 +84,9 @@ subscription.pause(
       .then((data) => setState(() => _data = data)),
 );
 ```
+
+
+
+## 제한 사항.
+
+제한 사항이랄 것 까진 없지만 그냥 쓰기 불편하다. 코드량이 많아지고 비즈니스 로직과 뷰 로직을 분리하려는 디자인 패턴에도 맞지 않는다.
