@@ -14,9 +14,9 @@ StreamSubscription subscription = someStream.listen(
 );
 ```
 
-## Subsciption 관리.
+## Subscription 관리.
 
-### 1. Subsciption의 cancel().
+### 1. Subscription의 cancel().
 
 Widget이 dispose되어 더 이상 Stream으로부터 데이터가 필요없는 경우는 어떻게 해야할까? 간단하다. dispose()메서드에서 Stream을 listening하던 StreamSubscription을 cancel하면 된다.
 
@@ -28,7 +28,7 @@ void dispose() {
 }
 ```
 
-### 2. Subsciption의 pause().
+### 2. Subscription의 pause().
 
 다른 Widget이 push되어 기존 Widget이 더이상 그려질 필요가 없고 state 또한 갱신되지 않아도 된다면 어떨까? 만약 계속 Stream을 listening하여 state를 갱신한다면 의미 없이 build함수를 돌며 리소스를 낭비할 수 있으며 경우에 따라 state가 변경되지 않아야 할 수도 있다.
 
