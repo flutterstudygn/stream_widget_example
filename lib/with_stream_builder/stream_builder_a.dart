@@ -9,6 +9,7 @@ class StreamBuilderA extends StatelessWidget {
   Widget build(BuildContext context) {
     print('[$tag] on builder called');
 
+    // 다른 Widget에 의해 가려졌는지 여부를 나타내는 변수
     bool covered = false;
 
     return Scaffold(
@@ -44,12 +45,14 @@ class StreamBuilderA extends StatelessWidget {
                 ),
                 RaisedButton(
                   onPressed: () async {
+                    // 현재 Widget이 다른 Widget에 의해 가려졌다고 상태 변경.
                     covered = true;
                     await Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (_) => StreamBuilderB(snapshot.data),
                       ),
                     );
+                    // 다른 Widget이 pop되어 현재 Widget이 드러났다고 상태 변경.
                     covered = false;
                   },
                   child: Text(
@@ -64,9 +67,3 @@ class StreamBuilderA extends StatelessWidget {
     );
   }
 }
-
-void d() => StreamBuilder<int>(
-      initialData: 0,
-      stream: Stream.periodic(Duration(seconds: 1), (i) => i),
-      builder: (context, snapshot) => Text(snapshot.data.toString()),
-    );
