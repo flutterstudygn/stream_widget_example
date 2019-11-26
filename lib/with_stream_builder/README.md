@@ -71,6 +71,6 @@ class Foo extends StatelessWidget {
 
 
 
-## 제한 사항
+## 제한 사항.
 
 예제와 같이 스톱 워치의 경우 새로 push된 Widget에 현재 값을 전달해주어서 계속 값이 연속되게할 수 있었다. 두 Widget 모두 타이밍에 차이는 있지만(이미 스톱 워치로서 문제가 있다;) 똑같이 수를 올리고 있기 때문이다. 하지만 그렇기에 계속 값이 갱신되면 안되는 경우에는 사용하기가 불편하다. 예를들어 WidgetA와 WidgetB가 있을 경우 WidgetA에 WidgetB가 push되면 WidgetA는 당시의 랩타임을 가지고 있다가 WidgetB가 pop되면 해당 랩타임을 그대로 보여준다고 하자. 구현 못할 건 없지만 굳이 이렇게 해야하나 싶다.
