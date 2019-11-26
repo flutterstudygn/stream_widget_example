@@ -41,7 +41,7 @@ class Foo extends StatelessWidget {
       body: StreamBuilder(
         stream: someStream,
         builder: (context, snapshot) {
-          // 현재 페이지가 가려졌다면 바로 빈 Widget인 SizedBox를 return한다.
+          // 현재 Widget이 가려졌다면 바로 빈 Widget인 SizedBox를 return한다.
           if (covered) {
             return SizedBox();
           }
